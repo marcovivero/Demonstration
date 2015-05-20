@@ -1,0 +1,18 @@
+{
+  "id": "cookies",
+  "description": "Cookies settings",
+  "engineFactory": "Demo.DemoEngine",
+  "datasource": {
+    "params": {
+      "appName": "Demonstration",
+      "evalK": 5
+    }
+  },
+  "algorithms": [
+    {
+      "name": "cookies",
+      "params": {
+      }
+    }
+  ]
+}

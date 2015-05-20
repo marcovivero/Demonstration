@@ -1,0 +1,16 @@
+### Generate fake data for GoodDataDemo
+
+setwd("~/GoodDataDemo/data")
+items = read.csv('items.txt')[,1]
+
+users = list()
+numObs = 100
+numDays = 15
+filebase = "testdata2"
+
+system(paste0("mkdir ", filebase))
+setwd("testdata2")
+for (i in 1:numObs) {
+  numItems = sample(1 : length(items), 1)
+  write.table(data.frame(sample(items, numItems)),file = paste0(filebase, i))
+}
