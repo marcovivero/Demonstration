@@ -48,7 +48,21 @@ class DataSource (dsp : DataSourceParams) extends
       // Prepare test data for fold.
       val test = data.filter(_._2 % dsp.evalK.get == k)
       .map(_._1)
-      .map(e => (new Query(e), new ActualResult(e)))
+      .map(
+        e => {
+          val x : Array[String] = e.split(",")
+
+          val query : String = x.takeRight(1)(0)
+
+          val actual : String = if (x.size > 1) {
+            x.take(x.size - 1).reduce((a, b) ⇒ a + "," + b)
+          } else {
+            ""
+          }
+
+          (Query(query), ActualResult(actual))
+        }
+      )
 
       (train, new EmptyEvaluationInfo, test)
     }
@@ -56,11 +70,6 @@ class DataSource (dsp : DataSourceParams) extends
   }
 
 }
-
-
-case class Observation(
-items : Array[String]
-) extends Serializable
 
 case class TrainingData (
   data : RDD[Observation]
@@ -71,5 +80,9 @@ case class TrainingData (
   }
 
 }
+
+case class Observation(
+  items : Array[String]
+) extends Serializable
 
 

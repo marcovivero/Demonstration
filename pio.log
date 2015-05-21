@@ -5390,3 +5390,71 @@ The best variant params can be found in best.json
 2015-05-20 17:54:42,143 INFO  io.prediction.workflow.CoreWorkflow$ [main] - runEvaluation completed
 2015-05-20 18:02:49,533 INFO  io.prediction.tools.console.Console$ [main] - Creating dashboard at 0.0.0.0:9000
 2015-05-20 18:02:50,851 INFO  spray.can.server.HttpListener [pio-dashboard-akka.actor.default-dispatcher-4] - Bound to /0.0.0.0:9000
+2015-05-20 19:09:32,587 WARN  org.apache.hadoop.hbase.client.HConnectionManager$HConnectionImplementation [main-EventThread] - This client just lost it's session with ZooKeeper, closing it. It will be recreated next time someone needs it
+org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired
+	at org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher.connectionEvent(ZooKeeperWatcher.java:401)
+	at org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher.process(ZooKeeperWatcher.java:319)
+	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:522)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:498)
+2015-05-21 01:26:56,186 INFO  io.prediction.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2015-05-21 01:26:58,726 ERROR io.prediction.data.storage.hbase.StorageClient [main] - HBase master is not running (ZooKeeper ensemble: localhost). Please make sure that HBase is running properly, and that the configuration is pointing at the correct ZooKeeper ensemble.
+2015-05-21 01:26:58,727 ERROR io.prediction.data.storage.Storage$ [main] - Error initializing storage client for source HBASE
+2015-05-21 01:26:58,728 ERROR io.prediction.data.storage.Storage$ [main] - com.google.protobuf.ServiceException: org.apache.hadoop.hbase.ipc.RemoteWithExtrasException(org.apache.hadoop.hbase.ipc.ServerNotRunningYetException): org.apache.hadoop.hbase.ipc.ServerNotRunningYetException: Server is not running yet
+	at org.apache.hadoop.hbase.master.HMaster.checkServiceStarted(HMaster.java:1862)
+	at org.apache.hadoop.hbase.master.MasterRpcServices.isMasterRunning(MasterRpcServices.java:845)
+	at org.apache.hadoop.hbase.protobuf.generated.MasterProtos$MasterService$2.callBlockingMethod(MasterProtos.java:42408)
+	at org.apache.hadoop.hbase.ipc.RpcServer.call(RpcServer.java:2031)
+	at org.apache.hadoop.hbase.ipc.CallRunner.run(CallRunner.java:107)
+	at org.apache.hadoop.hbase.ipc.RpcExecutor.consumerLoop(RpcExecutor.java:130)
+	at org.apache.hadoop.hbase.ipc.RpcExecutor$1.run(RpcExecutor.java:107)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-05-21 01:27:15,163 INFO  io.prediction.tools.console.Console$ [main] - Using existing engine manifest JSON at /Users/Marco/Demonstration/manifest.json
+2015-05-21 01:27:15,167 WARN  io.prediction.tools.console.Template$ [main] - template.json does not exist. Template metadata will not be available. (This is safe to ignore if you are not working on a template.)
+2015-05-21 01:27:15,209 INFO  io.prediction.tools.console.Console$ [main] - Using command '/Users/Marco/PredictionIO/sbt/sbt' at the current working directory to build.
+2015-05-21 01:27:15,210 INFO  io.prediction.tools.console.Console$ [main] - If the path above is incorrect, this process will fail.
+2015-05-21 01:27:15,211 INFO  io.prediction.tools.console.Console$ [main] - Uber JAR disabled. Making sure lib/pio-assembly-0.9.2.jar is absent.
+2015-05-21 01:27:15,211 INFO  io.prediction.tools.console.Console$ [main] - Going to run: /Users/Marco/PredictionIO/sbt/sbt  package assemblyPackageDependency
+2015-05-21 01:27:38,657 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m/Users/Marco/Demonstration/src/main/scala/Demo/DataSource.scala:58: type mismatch;[0m
+2015-05-21 01:27:38,658 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m found   : String[0m
+2015-05-21 01:27:38,658 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m required: Char[0m
+2015-05-21 01:27:38,658 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m            .reduce((a, b) ⇒ a + "," + b)[0m
+2015-05-21 01:27:38,666 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m                                     ^[0m
+2015-05-21 01:27:38,675 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m/Users/Marco/Demonstration/src/main/scala/Demo/DataSource.scala:61: type mismatch;[0m
+2015-05-21 01:27:38,675 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m found   : Any[0m
+2015-05-21 01:27:38,676 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m required: String[0m
+2015-05-21 01:27:38,676 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m          (Query(query), ActualResult(actual))[0m
+2015-05-21 01:27:38,676 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m                                      ^[0m
+2015-05-21 01:27:38,904 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m/Users/Marco/Demonstration/src/main/scala/Demo/DataSource.scala:58: type mismatch;[0m
+2015-05-21 01:27:38,905 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m found   : (Char, Char) => String[0m
+2015-05-21 01:27:38,905 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m required: (Any, Any) => Any[0m
+2015-05-21 01:27:38,905 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m            .reduce((a, b) ⇒ a + "," + b)[0m
+2015-05-21 01:27:38,905 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m                           ^[0m
+2015-05-21 01:27:38,966 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m/Users/Marco/Demonstration/src/main/scala/Demo/DataSource.scala:40: type mismatch;[0m
+2015-05-21 01:27:38,969 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m found   : scala.collection.immutable.IndexedSeq[(Demo.TrainingData, io.prediction.controller.SerializableClass, org.apache.spark.rdd.RDD[Nothing])][0m
+2015-05-21 01:27:38,970 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m required: Seq[(Demo.TrainingData, io.prediction.controller.EmptyEvaluationInfo, org.apache.spark.rdd.RDD[(Demo.Query, Demo.ActualResult)])][0m
+2015-05-21 01:27:38,970 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m    (0 until dsp.evalK.get).map { k =>[0m
+2015-05-21 01:27:38,970 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m                                ^[0m
+2015-05-21 01:27:39,421 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0mfour errors found[0m
+2015-05-21 01:27:39,453 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0m(compile:[31mcompile[0m) Compilation failed[0m
+2015-05-21 01:27:39,466 ERROR io.prediction.tools.console.Console$ [Thread-2] - [0m[[31merror[0m] [0mTotal time: 16 s, completed May 21, 2015 1:27:39 AM[0m
+2015-05-21 01:27:39,597 ERROR io.prediction.tools.console.Console$ [main] - Return code of previous step is 1. Aborting.
+2015-05-21 01:36:33,104 INFO  io.prediction.tools.console.Console$ [main] - Using existing engine manifest JSON at /Users/Marco/Demonstration/manifest.json
+2015-05-21 01:36:33,108 WARN  io.prediction.tools.console.Template$ [main] - template.json does not exist. Template metadata will not be available. (This is safe to ignore if you are not working on a template.)
+2015-05-21 01:36:33,154 INFO  io.prediction.tools.console.Console$ [main] - Using command '/Users/Marco/PredictionIO/sbt/sbt' at the current working directory to build.
+2015-05-21 01:36:33,154 INFO  io.prediction.tools.console.Console$ [main] - If the path above is incorrect, this process will fail.
+2015-05-21 01:36:33,155 INFO  io.prediction.tools.console.Console$ [main] - Uber JAR disabled. Making sure lib/pio-assembly-0.9.2.jar is absent.
+2015-05-21 01:36:33,156 INFO  io.prediction.tools.console.Console$ [main] - Going to run: /Users/Marco/PredictionIO/sbt/sbt  package assemblyPackageDependency
+2015-05-21 01:37:05,913 INFO  io.prediction.tools.console.Console$ [main] - Build finished successfully.
+2015-05-21 01:37:05,922 INFO  io.prediction.tools.console.Console$ [main] - Looking for an engine...
+2015-05-21 01:37:05,932 INFO  io.prediction.tools.console.Console$ [main] - Found Demo-assembly-0.1-SNAPSHOT-deps.jar
+2015-05-21 01:37:05,932 INFO  io.prediction.tools.console.Console$ [main] - Found demo_2.10-0.1-SNAPSHOT.jar
+2015-05-21 01:37:05,932 INFO  io.prediction.tools.console.Console$ [main] - Found GoodDataDemo-assembly-0.1-SNAPSHOT-deps.jar
+2015-05-21 01:37:05,932 INFO  io.prediction.tools.console.Console$ [main] - Found gooddatademo_2.10-0.1-SNAPSHOT.jar
+2015-05-21 01:37:05,940 INFO  io.prediction.tools.console.Console$ [main] - HADOOP_CONF_DIR is not set. Assuming HDFS is unavailable.
+2015-05-21 01:37:08,670 INFO  io.prediction.tools.RegisterEngine$ [main] - Copying file:/Users/Marco/Demonstration/target/scala-2.10/Demo-assembly-0.1-SNAPSHOT-deps.jar to file:/Users/Marco/.pio_store/engines/yDhe5Zzx4VwnVRpOPlzqRfkltkpff4jm/648a4366fd80b722b6d60c9a1aedc82a521e5ea1/Demo-assembly-0.1-SNAPSHOT-deps.jar
+2015-05-21 01:37:08,804 INFO  io.prediction.tools.RegisterEngine$ [main] - Copying file:/Users/Marco/Demonstration/target/scala-2.10/demo_2.10-0.1-SNAPSHOT.jar to file:/Users/Marco/.pio_store/engines/yDhe5Zzx4VwnVRpOPlzqRfkltkpff4jm/648a4366fd80b722b6d60c9a1aedc82a521e5ea1/demo_2.10-0.1-SNAPSHOT.jar
+2015-05-21 01:37:08,818 INFO  io.prediction.tools.RegisterEngine$ [main] - Copying file:/Users/Marco/Demonstration/target/scala-2.10/GoodDataDemo-assembly-0.1-SNAPSHOT-deps.jar to file:/Users/Marco/.pio_store/engines/yDhe5Zzx4VwnVRpOPlzqRfkltkpff4jm/648a4366fd80b722b6d60c9a1aedc82a521e5ea1/GoodDataDemo-assembly-0.1-SNAPSHOT-deps.jar
+2015-05-21 01:37:08,918 INFO  io.prediction.tools.RegisterEngine$ [main] - Copying file:/Users/Marco/Demonstration/target/scala-2.10/gooddatademo_2.10-0.1-SNAPSHOT.jar to file:/Users/Marco/.pio_store/engines/yDhe5Zzx4VwnVRpOPlzqRfkltkpff4jm/648a4366fd80b722b6d60c9a1aedc82a521e5ea1/gooddatademo_2.10-0.1-SNAPSHOT.jar
+2015-05-21 01:37:08,946 INFO  io.prediction.tools.RegisterEngine$ [main] - Registering engine yDhe5Zzx4VwnVRpOPlzqRfkltkpff4jm 648a4366fd80b722b6d60c9a1aedc82a521e5ea1
+2015-05-21 01:37:09,116 INFO  io.prediction.tools.console.Console$ [main] - Your engine is ready for training.

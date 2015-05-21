@@ -16,7 +16,7 @@ class CookiesAlgorithm (
   }
 
   def predict (m : EmptyModel, query : Query) : PredictedResult = {
-    new PredictedResult("Chocolate Chip,Macademia,Sugar", "0.01,0.01,0.01")
+    PredictedResult("Chocolate Chip,Macademia,Sugar", "0.01,0.01,0.01")
   }
 
 }

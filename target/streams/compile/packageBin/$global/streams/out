@@ -2,6 +2,8 @@
 [0m[[0mdebug[0m] [0mInput file mappings:[0m
 [0m[[0mdebug[0m] [0m	Demo/Observation$.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Marco/Demonstration/target/scala-2.10/classes/Demo/Observation$.class[0m
+[0m[[0mdebug[0m] [0m	Demo/PredictedResult$.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/Marco/Demonstration/target/scala-2.10/classes/Demo/PredictedResult$.class[0m
 [0m[[0mdebug[0m] [0m	Demo/Observation.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Marco/Demonstration/target/scala-2.10/classes/Demo/Observation.class[0m
 [0m[[0mdebug[0m] [0m	Demo/PreparedData$$anonfun$sanityCheck$1.class[0m
@@ -72,12 +74,16 @@
 [0m[[0mdebug[0m] [0m	  /Users/Marco/Demonstration/target/scala-2.10/classes/Demo[0m
 [0m[[0mdebug[0m] [0m	Demo/PreparedData$.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Marco/Demonstration/target/scala-2.10/classes/Demo/PreparedData$.class[0m
+[0m[[0mdebug[0m] [0m	Demo/DataSource$$anonfun$readEval$1$$anonfun$6$$anonfun$7.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/Marco/Demonstration/target/scala-2.10/classes/Demo/DataSource$$anonfun$readEval$1$$anonfun$6$$anonfun$7.class[0m
 [0m[[0mdebug[0m] [0m	Demo/Algorithm$$anonfun$3.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Marco/Demonstration/target/scala-2.10/classes/Demo/Algorithm$$anonfun$3.class[0m
 [0m[[0mdebug[0m] [0m	Demo/Model$$anonfun$5$$anonfun$apply$2.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Marco/Demonstration/target/scala-2.10/classes/Demo/Model$$anonfun$5$$anonfun$apply$2.class[0m
 [0m[[0mdebug[0m] [0m	Demo/PreparedData$$anonfun$2.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Marco/Demonstration/target/scala-2.10/classes/Demo/PreparedData$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	Demo/ActualResult$.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/Marco/Demonstration/target/scala-2.10/classes/Demo/ActualResult$.class[0m
 [0m[[0mdebug[0m] [0m	Demo/PreparedData$$anonfun$1.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Marco/Demonstration/target/scala-2.10/classes/Demo/PreparedData$$anonfun$1.class[0m
 [0m[[0mdebug[0m] [0m	Demo/Model.class[0m
@@ -108,6 +114,8 @@
 [0m[[0mdebug[0m] [0m	  /Users/Marco/Demonstration/target/scala-2.10/classes/Demo/PreparedData$$anonfun$2$$anonfun$apply$1.class[0m
 [0m[[0mdebug[0m] [0m	Demo/Model$$anonfun$6.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Marco/Demonstration/target/scala-2.10/classes/Demo/Model$$anonfun$6.class[0m
+[0m[[0mdebug[0m] [0m	Demo/Query$.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/Marco/Demonstration/target/scala-2.10/classes/Demo/Query$.class[0m
 [0m[[0mdebug[0m] [0m	Demo/DataSource$$anonfun$readEval$1$$anonfun$2.class[0m
 [0m[[0mdebug[0m] [0m	  /Users/Marco/Demonstration/target/scala-2.10/classes/Demo/DataSource$$anonfun$readEval$1$$anonfun$2.class[0m
 [0m[[0mdebug[0m] [0m	Demo/Model$$anonfun$5.class[0m

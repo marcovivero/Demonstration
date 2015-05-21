@@ -1,15 +1,19 @@
 package Demo
 
-import io.prediction.controller.{WithPrId, Engine, EngineFactory}
+import io.prediction.controller._
 
-class Query (val items : String) extends Serializable
+case class Query (
+  val items : String
+) extends Serializable
 
-class PredictedResult (
-  val recommendation : String,
-  val similarity : String
-) extends WithPrId with Serializable
+case class PredictedResult (
+  recommendations : String,
+  confidenceLevels : String
+) extends Serializable with WithPrId
 
-class ActualResult (val items : String) extends Serializable
+case class ActualResult (
+  val items : String
+) extends Serializable
 
 object DemoEngine extends EngineFactory {
   override

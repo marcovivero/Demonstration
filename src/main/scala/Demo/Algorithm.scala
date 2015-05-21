@@ -12,13 +12,13 @@ case class AlgorithmParams(
 
 
 
-class Algorithm (ap : AlgorithmParams) extends P2LAlgorithm[PreparedData, Model, Query, PredictedResult] {
+class Algorithm (
+  ap : AlgorithmParams
+) extends P2LAlgorithm[PreparedData, Model, Query, PredictedResult] {
 
   def train(sc : SparkContext, pd: PreparedData) : Model = {
     new Model(pd, ap.lambda)
   }
-
-
 
   def predict(model : Model, query : Query) : PredictedResult = {
 
@@ -49,10 +49,12 @@ class Model (pd : PreparedData, lambda : Double) extends Serializable {
       pd.data.filter(
         f => f._1 != e._1
       ).map(
-        f => (
-          f._1,
-          (e._2.intersect(f._2).size + lambda)  / (e._2.union(f._2).size.toDouble + lambda)
-        )
+        f => {
+          val setInt = e._2.intersect(f._2).size
+          val setUnion = e._2.union(f._2).size.toDouble
+
+          (f._1, (setInt + lambda)  / (setUnion + setInt * lambda))
+        }
       )
     )
   ).toMap
