@@ -4,4 +4,4 @@
 [0m[[0minfo[0m] [0mMerging files...[0m
 [0m[[33mwarn[0m] [0mMerging 'META-INF/MANIFEST.MF' with strategy 'discard'[0m
 [0m[[33mwarn[0m] [0mStrategy 'discard' was applied to a file[0m
-[0m[[0minfo[0m] [0mAssembly up to date: /Users/Marco/GoodDataDemo/target/scala-2.10/Demo-assembly-0.1-SNAPSHOT-deps.jar[0m
+[0m[[0minfo[0m] [0mAssembly up to date: /Users/Marco/Demonstration/target/scala-2.10/Demo-assembly-0.1-SNAPSHOT-deps.jar[0m

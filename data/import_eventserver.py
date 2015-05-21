@@ -3,8 +3,8 @@ import argparse
 
 
 
-def import_events(client, filename):
-    count  = 0
+def import_events(client, filename, count):
+    count  = int(count)
     print("Importing data.............")
     f = open("./data/" + filename, "r").read().split("\n")[: -1]
     for elem in f:
@@ -23,6 +23,7 @@ def import_events(client, filename):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description="Import sample data for text manipulation engine")
+    parser.add_argument('--count', default = '0')
     parser.add_argument('--file', default = 'testdata.txt')
     parser.add_argument('--access_key', default='invald_access_key')
     parser.add_argument('--url', default="http://localhost:7070")
@@ -34,4 +35,4 @@ if __name__ == '__main__':
         threads=20,
         qsize=5000)
 
-    import_events(client, args.file)
+    import_events(client, args.file, args.count)

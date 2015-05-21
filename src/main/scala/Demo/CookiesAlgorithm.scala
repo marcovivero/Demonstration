@@ -8,7 +8,7 @@ case class CookiesAlgorithmParams () extends Params
 
 class CookiesAlgorithm (
   cap : CookiesAlgorithmParams
-) extends PAlgorithm[PreparedData, EmptyModel, Query, PredictedResult] {
+) extends P2LAlgorithm[PreparedData, EmptyModel, Query, PredictedResult] {
 
 
   def train (sc : SparkContext, pd : PreparedData) : EmptyModel = {
@@ -16,7 +16,7 @@ class CookiesAlgorithm (
   }
 
   def predict (m : EmptyModel, query : Query) : PredictedResult = {
-    new PredictedResult("cookies", 0.0517648355677886)
+    new PredictedResult("Chocolate Chip,Macademia,Sugar", "0.01,0.01,0.01")
   }
 
 }

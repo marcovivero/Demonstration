@@ -11,29 +11,55 @@ case class DataSourceParams(
 ) extends Params
 
 class DataSource (dsp : DataSourceParams) extends
-PDataSource[TrainingData, EmptyEvaluationInfo, Query, ActualResult] {
+  PDataSource[TrainingData, EmptyEvaluationInfo, Query, ActualResult] {
 
 
-  def readEventData (sc : SparkContext) : RDD[Observation] = {
+  def readEventData(sc: SparkContext): RDD[String] = {
     PEventStore.find(
       appName = dsp.appName,
       entityType = Some("customer")
     )(sc).map(
-      e => Observation(
-        e.properties.get[String]("items").split(",")
-      )
+      e => e.properties.get[String]("items")
     ).cache
   }
 
-
-  def readTraining (sc : SparkContext) : TrainingData = {
-    TrainingData(readEventData(sc))
+  override
+  def readTraining(sc: SparkContext): TrainingData = {
+    TrainingData(readEventData(sc).map(e => Observation(e.split(","))))
   }
+
+  override
+  def readEval(sc: SparkContext):
+  Seq[(TrainingData, EmptyEvaluationInfo, RDD[(Query, ActualResult)])] = {
+    // Zip your RDD of events read from the server with indices
+    // for the purposes of creating our folds.
+    val data = readEventData(sc).zipWithIndex()
+
+    // Create cross validation folds by partitioning indices
+    // based on their index value modulo the number of folds.
+    (0 until dsp.evalK.get).map { k =>
+      // Prepare training data for fold.
+      val train = new TrainingData(
+        data.filter(_._2 % dsp.evalK.get != k)
+          .map(_._1)
+          .map(e => Observation(e.split(",")))
+      )
+
+      // Prepare test data for fold.
+      val test = data.filter(_._2 % dsp.evalK.get == k)
+      .map(_._1)
+      .map(e => (new Query(e), new ActualResult(e)))
+
+      (train, new EmptyEvaluationInfo, test)
+    }
+
+  }
+
 }
 
 
 case class Observation(
-  items : Array[String]
+items : Array[String]
 ) extends Serializable
 
 case class TrainingData (
@@ -45,4 +71,5 @@ case class TrainingData (
   }
 
 }
+
 

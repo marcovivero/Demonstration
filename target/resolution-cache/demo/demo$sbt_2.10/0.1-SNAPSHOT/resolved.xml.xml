@@ -4,7 +4,7 @@
 		module="demo$sbt_2.10"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20150520110516"
+		publication="20150520180422"
 	/>
 	<configurations>
 		<conf name="default" visibility="public"/>
