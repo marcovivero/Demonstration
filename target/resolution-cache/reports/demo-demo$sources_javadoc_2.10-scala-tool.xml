@@ -7,7 +7,7 @@
 		revision="0.1-SNAPSHOT"
 		conf="scala-tool"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20150521012901"/>
+		date="20150528121836"/>
 	<dependencies>
 		<module organisation="org.scala-lang" name="scala-compiler">
 			<revision name="2.10.4" status="release" pubdate="20140318144738" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
@@ -66,9 +66,6 @@
 				<artifacts>
 					<artifact name="scala-reflect" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="33913490" time="0" location="/Users/Marco/.ivy2/cache/org.scala-lang/scala-reflect/docs/scala-reflect-2.10.4-javadoc.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.4/scala-reflect-2.10.4-javadoc.jar"/>
-					</artifact>
-					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="3203471" time="0" location="/Users/Marco/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.10.4.jar">
-						<origin-location is-local="false" location="UNKNOWN"/>
 					</artifact>
 					<artifact name="scala-reflect" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="434883" time="0" location="/Users/Marco/.ivy2/cache/org.scala-lang/scala-reflect/srcs/scala-reflect-2.10.4-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.4/scala-reflect-2.10.4-sources.jar"/>

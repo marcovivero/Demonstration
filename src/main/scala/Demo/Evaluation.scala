@@ -9,7 +9,7 @@ extends AverageMetric[EmptyEvaluationInfo, Query, PredictedResult, ActualResult]
 
     val predSet = HashSet(pred.recommendations.split(",") : _*)
 
-    if (actual.items == "") {
+    if (actual.items != "") {
       val actualSet = HashSet(actual.items.split(","): _*)
 
       (predSet.intersect(actualSet).size) / predSet.size.toDouble

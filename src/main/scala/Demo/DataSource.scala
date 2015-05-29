@@ -13,7 +13,6 @@ case class DataSourceParams(
 class DataSource (dsp : DataSourceParams) extends
   PDataSource[TrainingData, EmptyEvaluationInfo, Query, ActualResult] {
 
-
   def readEventData(sc: SparkContext): RDD[String] = {
     PEventStore.find(
       appName = dsp.appName,
@@ -78,7 +77,6 @@ case class TrainingData (
   def sanityCheck(): Unit = {
     data.foreach(e => e.items.foreach(println))
   }
-
 }
 
 case class Observation(

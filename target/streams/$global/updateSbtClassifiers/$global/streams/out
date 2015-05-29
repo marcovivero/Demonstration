@@ -661,9 +661,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.5!test-agent.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.5!apply-macro.jar
-[debug] :: resolution report :: resolve 694ms :: artifacts dl 41ms
+[debug] :: resolution report :: resolve 1952ms :: artifacts dl 139ms
 [debug] 	report for demo#demo$sbt_2.10;0.1-SNAPSHOT default produced in /Users/Marco/Demonstration/target/resolution-cache/reports/demo-demo$sbt_2.10-default.xml
-[debug] 	resolve done (694ms resolve - 41ms download)
+[debug] 	resolve done (1952ms resolve - 139ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: demo#demo$sources_2.10;0.1-SNAPSHOT
 [debug] 	confs: [default]
@@ -1031,6 +1031,6 @@
 [debug] 	[NOT REQUIRED] com.eed3si9n#sbt-assembly;0.13.0!sbt-assembly.jar(src)
 [debug] 	[NOT REQUIRED] org.scalactic#scalactic_2.10;2.2.1!scalactic_2.10.jar(src)
 [debug] 	[NOT REQUIRED] io.prediction#pio-build;0.9.0!pio-build.jar(src)
-[debug] :: resolution report :: resolve 293ms :: artifacts dl 39ms
+[debug] :: resolution report :: resolve 590ms :: artifacts dl 71ms
 [debug] 	report for demo#demo$sources_2.10;0.1-SNAPSHOT default produced in /Users/Marco/Demonstration/target/resolution-cache/reports/demo-demo$sources_2.10-default.xml
-[debug] 	resolve done (293ms resolve - 39ms download)
+[debug] 	resolve done (590ms resolve - 71ms download)

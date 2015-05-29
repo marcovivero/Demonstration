@@ -1,5 +1,5 @@
 {
-  "id":"Demo.RecommendationEvaluation$ 2015-05-20T17:54:41.856-07:00",
+  "id":"Demo.RecommendationEvaluation$ 2015-05-27T12:34:17.824-07:00",
   "description":"",
   "engineFactory":"Demo.RecommendationEvaluation$",
   "datasource":{
@@ -19,7 +19,7 @@
     {
       "name":"algo",
       "params":{
-        "lambda":0.5
+        "lambda":5.0
       }
     }
   ],
